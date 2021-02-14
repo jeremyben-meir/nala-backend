@@ -9,7 +9,7 @@ export const main = handler(async (event, context) => {
   const params = {
     TableName: process.env.userTableName,
     Item: {
-      userId: "123", // The id of the author
+      userId: event.requestContext.identity.cognitoIdentityId, // The id of the author
       firstName: data.firstName, // A unique uuid
       lastName: data.lastName, // Parsed from request body
       profImg: data.profImg, // Parsed from request body
@@ -17,7 +17,6 @@ export const main = handler(async (event, context) => {
       reccomendations: data.reccomendations,
       followingPerson: data.followingPerson,
       followingSpot: data.followingSpot,
-      phoneNum: data.phoneNum,
       createdAt: Date.now(), // Current Unix timestamp
     },
   };

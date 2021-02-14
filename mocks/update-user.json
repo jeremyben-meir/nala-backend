@@ -1,6 +1,11 @@
 {
-  "body": "{\"phoneNum\":\"9999999999\"}",
+  "body": "{\"lastName\":\"Smith\"}",
   "pathParameters": {
     "id": "123"
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
   }
 }
