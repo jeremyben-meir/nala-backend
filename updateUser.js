@@ -11,7 +11,7 @@ export const main = handler(async (event, context) => {
     },
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
-    UpdateExpression: "SET firstName = :firstName, lastName = :lastName, handle = :handle, reccomendations = :reccomendations, followingPerson = :followingPerson, followingSpot = :followingSpot, phoneNum = :phoneNum",
+    UpdateExpression: "SET firstName = :firstName, lastName = :lastName, handle = :handle, reccomendations = :reccomendations, followingPerson = :followingPerson, followingSpot = :followingSpot",
     ExpressionAttributeValues: {
       ":firstName": data.firstName || null,
       ":lastName": data.lastName || null,
@@ -19,7 +19,6 @@ export const main = handler(async (event, context) => {
       ":reccomendations": data.reccomendations || null,
       ":followingPerson": data.followingPerson || null,
       ":followingSpot": data.followingSpot || null,
-      ":phoneNum": data.phoneNum || null,
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you
