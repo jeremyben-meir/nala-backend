@@ -1,5 +1,5 @@
 {
-  "body": "{\"firstName\":\"Jeremy\", \"lastName\":\"Ben-Meir\", \"profImg\":\"profile.jpg\", \"handle\":\"jeremy\", \"reccomendations\":\"[]\", \"followingPerson\":\"[]\", \"followingSpot\":\"[]\"}",
+  "body": "{\"firstName\":\"Jeremy\", \"lastName\":\"Ben-Meir\", \"profImg\":\"profile.jpg\", \"handle\":\"jeremy\", \"reccomendations\":[], \"followingPerson\":[], \"followingSpot\":[]}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"
