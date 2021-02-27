@@ -19,6 +19,7 @@ provider:
   # under process.env.
   environment:
     userTableName: users
+    postTableName: posts
 
   # 'iamRoleStatements' defines the permission policy for the Lambda function.
   # In this case Lambda functions are granted with permissions to access DynamoDB.
@@ -52,7 +53,7 @@ functions:
     handler: getUser.main
     events:
       - http:
-          path: user/{id}
+          path: user/{userId}
           method: get
           authorizer: aws_iam
   updateUser:
@@ -62,7 +63,7 @@ functions:
     handler: updateUser.main
     events:
       - http:
-          path: user/{id}
+          path: user/{userId}
           method: put
           authorizer: aws_iam
   deleteUser:
@@ -72,6 +73,27 @@ functions:
     handler: deleteUser.main
     events:
       - http:
-          path: user/{id}
+          path: user/{userId}
+          method: delete
+          authorizer: aws_iam
+  createPost:
+    handler: createPost.main
+    events:
+      - http:
+          path: post
+          method: post
+          authorizer: aws_iam
+  getPost:
+    handler: getPost.main
+    events:
+      - http:
+          path: post/{postId}
+          method: get
+          authorizer: aws_iam
+  deletePost:
+    handler: deletePost.main
+    events:
+      - http:
+          path: post/{postId}
           method: delete
           authorizer: aws_iam
